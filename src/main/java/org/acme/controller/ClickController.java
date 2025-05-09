@@ -22,17 +22,27 @@ public class ClickController {
 
     @GET
     public Uni<List<ClickResponse>> listAllClicks() {
-        return clicks.getAllClicks(null).onItem().transform(response -> response.getClicksList().stream()
-                .map(this::mapGrpcClickToDto)
-                .collect(Collectors.toList()));
+        return clicks.getAllClicks(null)
+                .onItem()
+                .transform(response -> response.getClicksList()
+                        .stream()
+                        .map(this::mapGrpcClickToDto)
+                        .collect(Collectors.toList()));
 
     }
 
     @POST
     public Uni<String> addClick(ClickEntity click) {
-        CreateClickRequest grpcRequest = CreateClickRequest.newBuilder().setUserId(click.userId).setX(click.x)
-                .setY(click.y).setTimestamp(click.timestamp).setHost(click.host).build();
-        return clicks.createClick(grpcRequest).onItem().transform(response -> response.getMessage());
+        CreateClickRequest grpcRequest = CreateClickRequest.newBuilder()
+                .setUserId(click.userId)
+                .setX(click.x)
+                .setY(click.y)
+                .setTimestamp(click.timestamp)
+                .setHost(click.host)
+                .build();
+
+        return clicks.createClick(grpcRequest)
+                .onItem().transform(response -> response.getMessage());
     }
 
     private ClickResponse mapGrpcClickToDto(Click click) {
