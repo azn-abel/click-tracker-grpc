@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.quarkus.example";
+option java_outer_classname = "ClickProto";
+
+package click;
+
+// The click service definition.
+service ClickProtoService {
+    rpc CreateClick (CreateClickRequest) returns (CreateClickReply);
+    rpc GetAllClicks (Empty) returns (GetAllClicksResponse);
+}
+
+message Empty {}
+
+message Click {
+    int32 id = 1;
+    string name = 2;
+    double x = 3;
+    double y = 4;
+    string timestamp = 5;
+    string host = 6;
+    string userId = 7;
+}
+
+message GetAllClicksResponse {
+    repeated Click clicks = 1;
+}
+
+// The request message containing the user's name.
+message CreateClickRequest {
+    string name = 1;
+    double x = 2;
+    double y = 3;
+    string timestamp = 4;
+    string host = 5;
+    string userId = 6;
+}
+
+// The response message containing the greetings
+message CreateClickReply {
+    string message = 1;
+}
