@@ -6,7 +6,6 @@ option java_outer_classname = "ClickProto";
 
 package click;
 
-// The click service definition.
 service ClickProtoService {
     rpc CreateClick (CreateClickRequest) returns (CreateClickReply);
     rpc GetAllClicks (Empty) returns (GetAllClicksResponse);
@@ -28,7 +27,6 @@ message GetAllClicksResponse {
     repeated Click clicks = 1;
 }
 
-// The request message containing the user's name.
 message CreateClickRequest {
     string name = 1;
     double x = 2;
