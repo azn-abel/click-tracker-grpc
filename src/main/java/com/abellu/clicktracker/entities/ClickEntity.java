@@ -1,4 +1,4 @@
-package com.abellu.clicktracker.repository;
+package com.abellu.clicktracker.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

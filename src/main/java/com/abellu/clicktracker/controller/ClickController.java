@@ -3,10 +3,10 @@ package com.abellu.clicktracker.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.abellu.clicktracker.entities.ClickEntity;
 import com.abellu.clicktracker.grpc.Click;
 import com.abellu.clicktracker.grpc.ClickProtoService;
 import com.abellu.clicktracker.grpc.CreateClickRequest;
-import com.abellu.clicktracker.repository.ClickEntity;
 
 import io.quarkus.grpc.GrpcClient;
 import io.smallrye.mutiny.Uni;

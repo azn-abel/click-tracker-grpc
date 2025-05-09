@@ -2,13 +2,13 @@ package com.abellu.clicktracker.service;
 
 import java.util.List;
 
+import com.abellu.clicktracker.entities.ClickEntity;
 import com.abellu.clicktracker.grpc.Click;
 import com.abellu.clicktracker.grpc.ClickProtoService;
 import com.abellu.clicktracker.grpc.CreateClickReply;
 import com.abellu.clicktracker.grpc.CreateClickRequest;
 import com.abellu.clicktracker.grpc.Empty;
 import com.abellu.clicktracker.grpc.GetAllClicksResponse;
-import com.abellu.clicktracker.repository.ClickEntity;
 
 import io.quarkus.grpc.GrpcService;
 import io.smallrye.mutiny.Uni;
