@@ -1,13 +1,13 @@
-package org.acme.controller;
+package com.abellu.clicktracker.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.acme.repository.ClickEntity;
+import com.abellu.clicktracker.grpc.Click;
+import com.abellu.clicktracker.grpc.ClickProtoService;
+import com.abellu.clicktracker.grpc.CreateClickRequest;
+import com.abellu.clicktracker.repository.ClickEntity;
 
-import io.quarkus.example.Click;
-import io.quarkus.example.ClickProtoService;
-import io.quarkus.example.CreateClickRequest;
 import io.quarkus.grpc.GrpcClient;
 import io.smallrye.mutiny.Uni;
 import jakarta.ws.rs.GET;

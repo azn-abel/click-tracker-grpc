@@ -1,15 +1,15 @@
-package org.acme.service;
+package com.abellu.clicktracker.service;
 
 import java.util.List;
 
-import org.acme.repository.ClickEntity;
+import com.abellu.clicktracker.grpc.Click;
+import com.abellu.clicktracker.grpc.ClickProtoService;
+import com.abellu.clicktracker.grpc.CreateClickReply;
+import com.abellu.clicktracker.grpc.CreateClickRequest;
+import com.abellu.clicktracker.grpc.Empty;
+import com.abellu.clicktracker.grpc.GetAllClicksResponse;
+import com.abellu.clicktracker.repository.ClickEntity;
 
-import io.quarkus.example.Click;
-import io.quarkus.example.ClickProtoService;
-import io.quarkus.example.CreateClickReply;
-import io.quarkus.example.CreateClickRequest;
-import io.quarkus.example.Empty;
-import io.quarkus.example.GetAllClicksResponse;
 import io.quarkus.grpc.GrpcService;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.infrastructure.Infrastructure;
