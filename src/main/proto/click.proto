@@ -36,7 +36,6 @@ message CreateClickRequest {
     string userId = 6;
 }
 
-// The response message containing the greetings
 message CreateClickReply {
     string message = 1;
 }
